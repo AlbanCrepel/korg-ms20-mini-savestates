@@ -7,7 +7,7 @@
 		<voltage-controlled-lowpass-filter class="div5"></voltage-controlled-lowpass-filter>
 		<div class="div6"></div>
 		<envelope-generator2 class="div7"></envelope-generator2>
-		<div class="div8"></div>
+		<patches-wrapper class="div8"></patches-wrapper>
 		<portamento class="div9" :fullHeight="false"></portamento>
 		<master-tune class="div10" :fullHeight="false"></master-tune>
 		<freq-modulation class="div11" :fullHeight="false"></freq-modulation>
@@ -15,7 +15,7 @@
 		<cutoff-frequency-modulation2 class="div13" :fullHeight="false"></cutoff-frequency-modulation2>
 		<modulation-generator class="div14" :fullHeight="false"></modulation-generator>
 		<envelope-generator-1 class="div15" :fullHeight="false"></envelope-generator-1>
-		<external-signal-processor class="div16" :fullHeight="false" :style="{ alignItems: 'flex-start' }"></external-signal-processor>
+		<external-signal-processor class="div16"></external-signal-processor>
 	</div>
 </template>
 
@@ -72,7 +72,7 @@
 	}
 
 	.div6 {
-		grid-area: 1 / 6 / 4 / 8;
+		grid-area: 1 / 6 / 6 / 8;
 	}
 
 	.div7 {
@@ -104,11 +104,11 @@
 	}
 
 	.div14 {
-		grid-area: 4 / 6 / 13 / 7;
+		grid-area: 6 / 6 / 13 / 7;
 	}
 
 	.div15 {
-		grid-area: 4 / 7 / 13 / 8;
+		grid-area: 6 / 7 / 13 / 8;
 	}
 
 	.div16 {

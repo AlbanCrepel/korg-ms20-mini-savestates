@@ -106,7 +106,7 @@
 	}
 
 	.virtual-thumb {
-		--size: 10px;
+		--size: 8px;
 		width: var(--size);
 		height: var(--size);
 		background-color: red;

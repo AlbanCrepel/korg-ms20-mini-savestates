@@ -18,7 +18,7 @@ export const Controller = class Controller {
         this.vco2_scale = new Knob("scale", "vco2_scale", 3, 0, 3, Knob.DISCRETE_STEP, 100, Knob.BIG)
 
         this.portamento = new Knob("time", "portamento", 5, 0, 10, Knob.CONTINUOUS_STEP, 60, Knob.SMALL)
-        this.master_tune = new Knob("", "mater_tune", 0, -5, 5, Knob.CONTINUOUS_STEP, 60, Knob.SMALL)
+        this.master_tune = new Knob("&nbsp;", "mater_tune", 0, -5, 5, Knob.CONTINUOUS_STEP, 60, Knob.SMALL)
 
         this.vco1_level = new Knob("VCO 1 level", "vco1_level", 5, 0, 10, Knob.CONTINUOUS_STEP, 60, Knob.SMALL)
         this.vco2_level = new Knob("VCO 2 level", "vco2_level", 5, 0, 10, Knob.CONTINUOUS_STEP, 60, Knob.SMALL)
@@ -56,5 +56,7 @@ export const Controller = class Controller {
         this.external_signal_processor_high_cut_freq = new Knob("High cut freq", "external_signal_processor_high_cut_freq", 5, 0, 10, Knob.CONTINUOUS_STEP, 60, Knob.SMALL)
         this.external_signal_processor_cv_adjust = new Knob("CV adjust", "external_signal_processor_cv_adjust", 5, 0, 10, Knob.CONTINUOUS_STEP, 60, Knob.SMALL)
         this.external_signal_processor_threshold = new Knob("Threshold level", "external_signal_processor_threshold", 5, 0, 10, Knob.CONTINUOUS_STEP, 60, Knob.SMALL)
+
+        this.volume = new Knob("Volume", "volume", 4, 1, 10, Knob.CONTINUOUS_STEP, 60, Knob.BIG)
     }
 }
