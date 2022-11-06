@@ -1,7 +1,16 @@
+@import "fonts.scss";
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+:root {
+  --font-family: 'archivo';
+  --font-size-big: 1.1rem;
+  --font-size: 14px;
+  --font-size-small: 0.68rem;
 }
 
 html.dark {
@@ -11,6 +20,23 @@ html.dark {
 }
 
 html {
+  font-size: var(--font-size);
   background-color: var(--layout-background);
   color: var(--text-color);
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.condensed {
+  font-variation-settings: 'wdth' 80;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.no-wrap {
+  white-space: nowrap;
 }

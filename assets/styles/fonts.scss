@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'archivo';
+  font-weight: 100 900;
+  src: url('/fonts/Archivo-VariableFont_wdth,wght.ttf') format('truetype');
+}
+
+html {
+  font-family: var(--font-family), sans-serif;
+}

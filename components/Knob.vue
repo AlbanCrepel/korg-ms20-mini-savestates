@@ -1,17 +1,21 @@
 <template>
-	<div>
+	<div class="knob" ref="knob">
 		<div class="virtual-knob-container">
 			<div class="virtual-thumb"></div>
-			<input class="knob" type="range" :step="step" :min="min" :max="max" v-model.number="modelValue" />
-			<span v-for="(item, index) in range"
-			      class="label"
-			      :style="{ transform: `translate(calc(${ computeLabelPosition(index).x }px + 100%),calc(${ computeLabelPosition(index).y }px - 100%))`}">{{ item }}</span>
+			<input class="knob-slider" type="range" :step="step" :min="min" :max="max" v-model.number="modelValue" />
 		</div>
-		{{ modelValue }}
+		<span v-for="(item, index) in range"
+		      class="label"
+		      :style="{ transform: `translate(calc(${ computeLabelPosition(index).x }px - 50%),calc(${ computeLabelPosition(index).y }px - 50%))`}">
+			{{ item }}
+		</span>
 	</div>
 </template>
 
 <script>
+
+	const roundNumber = (x) => Math.round((x + Number.EPSILON) * 100) / 100
+
 	export default {
 		name: "Knob",
 		props: {
@@ -33,6 +37,14 @@
 			circleDegreeOffset: {
 				type: Number,
 				default: 60
+			},
+			labelsPadding: {
+				type: Number,
+				default: 20
+			},
+			knobSize: {
+				type: Number,
+				default: 100
 			}
 		},
 		computed: {
@@ -52,11 +64,11 @@
 				return ((360 - this.circleDegreeOffset * 2)  / this.stepsCount) * value + this.circleDegreeOffset
 			},
 			computeLabelPosition(labelIndex){
-				const radius = 100
+				const radius = this.knobSize / 2
 
 				return {
-					x: -1 * radius * Math.sin(Math.PI * 2 * this.getCircleDegreeByValue(labelIndex) / 360) + 180,
-					y: radius * Math.cos(Math.PI * 2 * this.getCircleDegreeByValue(labelIndex) / 360)
+					x: roundNumber(-1 * ((radius + this.labelsPadding / 2) * Math.sin(Math.PI * 2 * this.getCircleDegreeByValue(labelIndex) / 360))),
+					y: roundNumber((radius + this.labelsPadding / 2) * Math.cos(Math.PI * 2 * this.getCircleDegreeByValue(labelIndex) / 360))
 				}
 			}
 		}
@@ -65,13 +77,20 @@
 
 <style scoped lang="scss">
 
+	.knob {
+		position: relative;
+		display: inline-block;
+		padding: calc(v-bind(labelsPadding) * 1px);
+		box-sizing: content-box;
+	}
+
 	.virtual-knob-container {
-		--knob-border-color: gray;
+		--knob-border-color: #2c2b31;
 		--knob-label-color: white;
-		--radius: 100px;
-		width: calc(2 * var(--radius));
-		height: calc(2 * var(--radius));
+		width: calc(v-bind(knobSize) * 1px);
+		height: calc(v-bind(knobSize) * 1px);
 		border: solid 1px var(--knob-border-color);
+		background-color: #1a191d;
 		border-radius: 50%;
 		position: relative;
 		box-sizing: border-box;
@@ -82,7 +101,8 @@
 		display: inline-block;
 		position: absolute;
 		top: 50%;
-		left: -50%;
+		left: 50%;
+		font-size: 0.6rem;
 	}
 
 	.virtual-thumb {
@@ -94,12 +114,12 @@
 		position: absolute;
 		left: calc(50% - var(--size) / 2);
 		bottom: calc(-1 * var(--size) / 2 - 1px);
-		transform-origin: calc(var(--size) / 2) calc(-1 * var(--radius) + var(--size) / 2);
+		transform-origin: calc(var(--size) / 2) calc(-1 * calc(v-bind(knobSize) * 1px / 2) + var(--size) / 2);
 		transform: rotateZ(v-bind(virtualThumbRotation));
 		transition: transform 0.5s cubic-bezier(0.190, 1.000, 0.220, 1.000); /* easeOutExpo */
 	}
 
-	.knob {
+	.knob-slider {
 		appearance: none;
 		width: 100%; /* Full-width */
 		height: 100%; /* Specified height */
@@ -111,12 +131,12 @@
 	}
 
 	/* Mouse-over effects */
-	.knob:hover {
+	.knob-slider:hover {
 		/*opacity: 1;*/ /* Fully shown on mouse-over */
 	}
 
 	/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
-	.knob::-webkit-slider-thumb {
+	.knob-slider::-webkit-slider-thumb {
 		appearance: none;
 		width: 25px; /* Set a specific slider handle width */
 		height: 25px; /* Slider handle height */
@@ -124,7 +144,7 @@
 		cursor: pointer; /* Cursor on hover */
 	}
 
-	.knob::-moz-range-thumb {
+	.knob-slider::-moz-range-thumb {
 		width: 25px; /* Set a specific slider handle width */
 		height: 25px; /* Slider handle height */
 		background: red;

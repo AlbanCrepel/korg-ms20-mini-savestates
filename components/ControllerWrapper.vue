@@ -1,27 +1,34 @@
 <template>
 	<div class="controller-wrapper">
-		<div class="div1"></div>
-		<div class="div2"></div>
-		<div class="div3"></div>
-		<div class="div4"></div>
-		<div class="div5"></div>
+		<vco1 class="div1"></vco1>
+		<vco2 class="div2"></vco2>
+		<vco-mixer class="div3"></vco-mixer>
+		<voltage-controlled-highpass-filter class="div4"></voltage-controlled-highpass-filter>
+		<voltage-controlled-lowpass-filter class="div5"></voltage-controlled-lowpass-filter>
 		<div class="div6"></div>
-		<div class="div7"></div>
+		<envelope-generator2 class="div7"></envelope-generator2>
 		<div class="div8"></div>
-		<div class="div9"></div>
-		<div class="div10"></div>
-		<div class="div11"></div>
-		<div class="div12"></div>
-		<div class="div13"></div>
-		<div class="div14"></div>
-		<div class="div15"></div>
-		<div class="div16"></div>
+		<portamento class="div9" :fullHeight="false"></portamento>
+		<master-tune class="div10" :fullHeight="false"></master-tune>
+		<freq-modulation class="div11" :fullHeight="false"></freq-modulation>
+		<cutoff-frequency-modulation1 class="div12" :fullHeight="false"></cutoff-frequency-modulation1>
+		<cutoff-frequency-modulation2 class="div13" :fullHeight="false"></cutoff-frequency-modulation2>
+		<modulation-generator class="div14" :fullHeight="false"></modulation-generator>
+		<envelope-generator-1 class="div15" :fullHeight="false"></envelope-generator-1>
+		<external-signal-processor class="div16" :fullHeight="false" :style="{ alignItems: 'flex-start' }"></external-signal-processor>
 	</div>
 </template>
 
 <script>
+	import Vco2 from "./Vco2";
+	import VcoMixer from "./VcoMixer";
+	import ModulationGenerator from "./ModulationGenerator";
+	import EnvelopeGenerator from "./EnvelopeGenerator1";
+	import EnvelopeGenerator2 from "./EnvelopeGenerator2";
+	import ExternalSignalProcessor from "./ExternalSignalProcessor";
 	export default {
-		name: "ControllerWrapper"
+		name: "ControllerWrapper",
+		components: {ExternalSignalProcessor, EnvelopeGenerator2, EnvelopeGenerator, ModulationGenerator, VcoMixer, Vco2}
 	}
 </script>
 
@@ -38,6 +45,9 @@
 
 		> * {
 			border: solid 1px var(--border-color);
+			padding: 5px;
+			display: flex;
+			flex-direction: column;
 		}
 	}
 
