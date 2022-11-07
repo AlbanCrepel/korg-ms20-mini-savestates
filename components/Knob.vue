@@ -86,6 +86,7 @@
 		display: inline-block;
 		padding: calc(v-bind(labelsPadding) * 1px);
 		box-sizing: content-box;
+		z-index: 10;
 	}
 
 	.virtual-knob-container {

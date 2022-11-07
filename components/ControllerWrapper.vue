@@ -20,15 +20,10 @@
 </template>
 
 <script>
-	import Vco2 from "./Vco2";
-	import VcoMixer from "./VcoMixer";
-	import ModulationGenerator from "./ModulationGenerator";
-	import EnvelopeGenerator from "./EnvelopeGenerator1";
-	import EnvelopeGenerator2 from "./EnvelopeGenerator2";
-	import ExternalSignalProcessor from "./ExternalSignalProcessor";
+
+
 	export default {
 		name: "ControllerWrapper",
-		components: {ExternalSignalProcessor, EnvelopeGenerator2, EnvelopeGenerator, ModulationGenerator, VcoMixer, Vco2}
 	}
 </script>
 
@@ -36,7 +31,7 @@
 
 	.controller-wrapper {
 		width: 100%;
-		height: 700px;
+		height: 550px;
 		display: grid;
 		grid-template-columns: repeat(8, 1fr) 6fr;
 		grid-template-rows: repeat(12, 1fr);

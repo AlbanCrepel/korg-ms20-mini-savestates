@@ -1,4 +1,5 @@
 import {Knob} from "./Knob";
+import {PatchEdge} from "./PatchEdge";
 
 export const Controller = class Controller {
     constructor(){
@@ -51,5 +52,10 @@ export const Controller = class Controller {
         this.external_signal_processor_threshold = new Knob("Threshold level", "external_signal_processor_threshold", 5, 0, 10, Knob.CONTINUOUS_STEP, 60, Knob.SMALL)
 
         this.volume = new Knob("Volume", "volume", 4, 1, 10, Knob.CONTINUOUS_STEP, 60, Knob.BIG)
+
+        this.patchEdges = [
+            new PatchEdge("e1-2", "total", "freq"),
+            new PatchEdge("e1-3", "out_1", "black")
+        ]
     }
 }

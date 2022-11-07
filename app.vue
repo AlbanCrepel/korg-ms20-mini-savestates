@@ -1,6 +1,8 @@
 <template>
 	<main>
 		<controller-wrapper/>
+
+		<patch-nodes />
 	</main>
 </template>
 

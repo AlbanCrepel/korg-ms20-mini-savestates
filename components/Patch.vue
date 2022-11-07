@@ -1,7 +1,7 @@
 <template>
 	<div class="patch-item" :style="{ gridArea: `${ rowStart } / ${ columnStart} / ${ rowEnd } / ${ columnEnd }`}">
 		<div class="uppercase label no-wrap" v-html="label"></div>
-		<div class="patch"></div>
+		<div class="patch" :id="id"></div>
 	</div>
 </template>
 

@@ -25,6 +25,10 @@ html {
   color: var(--text-color);
 }
 
+main {
+  position: relative;
+}
+
 .uppercase {
   text-transform: uppercase;
 }
