@@ -2,7 +2,7 @@
 	<div class="knob" ref="knob">
 		<div class="virtual-knob-container">
 			<div class="virtual-thumb"></div>
-			<input class="knob-slider" type="range" :step="step" :min="min" :max="max" v-model.number="modelValue" />
+			<input class="knob-slider" type="range" :step="step" :min="min" :max="max" :value="modelValue" @input="emitValue" />
 		</div>
 		<span v-for="(item, index) in range"
 		      class="label"
@@ -18,6 +18,7 @@
 
 	export default {
 		name: "Knob",
+		emits: ["update:modelValue"],
 		props: {
 			min: {
 				type: Number,
@@ -70,6 +71,9 @@
 					x: roundNumber(-1 * ((radius + this.labelsPadding / 2) * Math.sin(Math.PI * 2 * this.getCircleDegreeByValue(labelIndex) / 360))),
 					y: roundNumber((radius + this.labelsPadding / 2) * Math.cos(Math.PI * 2 * this.getCircleDegreeByValue(labelIndex) / 360))
 				}
+			},
+			emitValue(e){
+				this.$emit("update:modelValue", parseFloat(e.target.value))
 			}
 		}
 	}

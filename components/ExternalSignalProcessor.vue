@@ -7,7 +7,7 @@
 				<patch label="Out" id="out_7" :row-start="1" :column-start="4" :row-end="2" :column-end="5"/>
 				<patch label="Out" id="out_8" :row-start="1" :column-start="7" :row-end="2" :column-end="8"/>
 				<patch label="CV out" id="cv_out" :row-start="1" :column-start="10" :row-end="2" :column-end="11"/>
-				<patch label="Env out" id="env_out" :row-start="1" :column-start="15" :row-end="2" :column-end="16"/>
+				<patch label="Env out" id="env_out" :row-start="1" :column-start="14" :row-end="2" :column-end="15"/>
 				<patch label="Trig out" id="trig_out_2" :row-start="1" :column-start="16" :row-end="2" :column-end="17"/>
 			</div>
 

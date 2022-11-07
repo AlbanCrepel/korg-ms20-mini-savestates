@@ -1,12 +1,5 @@
 import {Knob} from "./Knob";
 
-export const KnobGroup = class Group {
-    constructor(label, knobs) {
-        this.label = label
-        this.knobs = knobs
-    }
-}
-
 export const Controller = class Controller {
     constructor(){
         this.vco1_wave = new Knob("wave form", "vco1_wave", 0, 0, 3, Knob.DISCRETE_STEP, 100, Knob.BIG)
