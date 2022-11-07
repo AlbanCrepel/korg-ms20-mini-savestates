@@ -1,8 +1,14 @@
 <template>
 	<main>
-		<controller-wrapper/>
+		<div class="container">
+			<controller-wrapper/>
 
-		<patch-nodes />
+			<patch-nodes />
+		</div>
+
+		<actions />
+
+		<preset-list />
 	</main>
 </template>
 
