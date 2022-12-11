@@ -1,7 +1,14 @@
 <template>
-	<div class="patch-item" :style="{ gridArea: `${ rowStart } / ${ columnStart} / ${ rowEnd } / ${ columnEnd }`}">
-		<div class="uppercase label no-wrap" v-html="label"></div>
-		<div class="patch" :id="id"></div>
+	<div class="patch-item"
+	     :style="{
+			gridArea: `${ rowStart } / ${ columnStart} / ${ rowEnd } / ${ columnEnd }`,
+			top: `${top}px`,
+			left: `${left}px`
+		 }">
+		<div class="patch-content">
+			<div class="uppercase label no-wrap" v-html="label"></div>
+			<div class="patch" :id="id"></div>
+		</div>
 	</div>
 </template>
 
@@ -28,6 +35,14 @@
 			},
 			columnEnd: {
 				type: Number
+			},
+			top: {
+				type: Number,
+				default: 0
+			},
+			left: {
+				type: Number,
+				default: 0
 			}
 		}
 	}
@@ -40,6 +55,14 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		position: relative;
+	}
+
+	.patch-content {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
 	}
 
 	.patch {

@@ -1,6 +1,7 @@
 <template>
 	<div class="knob" ref="knob">
 		<div class="virtual-knob-container">
+			<div class="value">{{ modelValue }}</div>
 			<div class="virtual-thumb"></div>
 			<input class="knob-slider" type="range" :step="step" :min="min" :max="max" :value="modelValue" @input="emitValue" />
 		</div>
@@ -101,6 +102,20 @@
 		box-sizing: border-box;
 	}
 
+	.value {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-size: var(--font-size-small);
+		opacity: 0;
+		transition: opacity .2s ease-out;
+	}
+
+	.knob:hover .value {
+		opacity: 1;
+	}
+
 	.label {
 		color: var(--knob-label-color);
 		display: inline-block;
@@ -126,23 +141,26 @@
 
 	.knob-slider {
 		appearance: none;
-		width: 100%; /* Full-width */
-		height: 100%; /* Specified height */
 		background: #d3d3d3; /* Grey background */
 		outline: none; /* Remove outline */
 		opacity: 0; /* Set transparency (for mouse-over effects on hover) */
 		cursor: pointer;
 		/*transition: opacity .2s;*/
+		width: calc(100% + 40px);
+		height: calc(100% + 40px);
+		transform-origin: center center;
+		transform: rotateZ(-90deg) translate(25%, -50%);
+		position: absolute;
 	}
 
 	/* Mouse-over effects */
 	.knob-slider:hover {
-		/*opacity: 1;*/ /* Fully shown on mouse-over */
+		opacity: 0; /* Fully shown on mouse-over */
 	}
 
 	/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
 	.knob-slider::-webkit-slider-thumb {
-		appearance: none;
+		/*appearance: none;*/
 		width: 25px; /* Set a specific slider handle width */
 		height: 25px; /* Slider handle height */
 		background: red;

@@ -48,11 +48,12 @@
 		grid-template-rows: repeat(1, 1fr);
 		grid-column-gap: 0px;
 		grid-row-gap: 0px;
+		padding: 10px;
 	}
 
 	.flex-row {
 		display: flex;
-		justify-content: space-between;
+		/*justify-content: space-between;*/
 	}
 
 </style>

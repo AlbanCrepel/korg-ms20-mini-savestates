@@ -87,4 +87,10 @@
 		stroke-width: 2px;
 	}
 
+	.vue-flow__handle {
+		--size:40px;
+		width: var(--size);
+		height: var(--size);
+	}
+
 </style>

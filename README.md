@@ -74,3 +74,14 @@ The level of volume while the key is pressed
 
 The time it takes the oscillator to fade out after the key is released
 
+#### EGT/EXT
+
+The envelope is now controlled with the patches if any are plugged-in.
+
+For example, if I link the wheel to the freq patch, the EGT/EXT will control the amount of effect from the wheel.
+
+#### Total patch
+
+It's controlled by the MG/T.EXT knob.
+
+For example, if I link the wheel to the total patch, it will be controlled by the MG/T.EXT knob.
