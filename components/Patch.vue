@@ -69,7 +69,7 @@
 		--size: 15px;
 		width: var(--size);
 		height: var(--size);
-		border: solid 1px var(--border-color);
+		border: solid 1px white;
 		border-radius: 50%;
 	}
 

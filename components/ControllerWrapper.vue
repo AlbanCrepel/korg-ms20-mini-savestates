@@ -39,7 +39,7 @@
 		grid-row-gap: 0px;
 
 		> * {
-			border: solid 1px var(--border-color);
+			border: solid 1px white;
 			padding: 5px;
 			display: flex;
 			flex-direction: column;

@@ -53,13 +53,16 @@ export const Controller = class Controller {
         this.volume = new Knob("Volume", "volume", options.volume ?? 4, 1, 10, Knob.CONTINUOUS_STEP, 60, Knob.BIG)
 
         this.patchEdges = options.patchEdges ?? []
+
+        this.patchTitle = options.patchTitle || ""
+        this.description = options.description || ""
     }
 
     save = () => {
         const dataToExport = {}
 
         for (const [key, value] of Object.entries(this)) {
-            if (Array.isArray(this[key])) {
+            if (Array.isArray(this[key]) || typeof this[key] === "string") {
                 dataToExport[key] = value
             } else if (typeof this[key] === "object") {
                 dataToExport[key] = value.value
@@ -69,8 +72,7 @@ export const Controller = class Controller {
         const dataStr = `data:text/json;charset=utf-8,${encodeURIComponent(JSON.stringify(dataToExport))}`
         const downloadAnchorNode = document.createElement('a')
         downloadAnchorNode.setAttribute("href", dataStr)
-        // @TODO change file name
-        downloadAnchorNode.setAttribute("download", `korg-ms20-mini-preset.json`)
+        downloadAnchorNode.setAttribute("download", `${ this.patchTitle || 'korg-ms20-mini-preset' }.json`)
         document.body.appendChild(downloadAnchorNode) // required for firefox
         downloadAnchorNode.click()
         downloadAnchorNode.remove()

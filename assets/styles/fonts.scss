@@ -4,6 +4,12 @@
   src: url('/fonts/Archivo-VariableFont_wdth,wght.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'jetbrains';
+  font-weight: 100 900;
+  src: url('/fonts/JetBrainsMono[wght].ttf') format('truetype');
+}
+
 html {
   font-family: var(--font-family), sans-serif;
 }

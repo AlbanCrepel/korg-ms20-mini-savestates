@@ -1,7 +1,12 @@
 <template>
-	<ul> Presets
-		<li v-for="(preset, index) in presets"><a @click="loadPreset(index)">{{ preset._file }}</a></li>
-	</ul>
+	<div class="monospace presets-wrapper">
+		<h2 class="title">Presets</h2>
+		<ul class="preset-list">
+			<li v-for="(preset, index) in presets" class="preset-item">
+				<a @click="loadPreset(index)" class="preset-link">{{ preset._file }}</a>
+			</li>
+		</ul>
+	</div>
 </template>
 
 <script>
@@ -27,6 +32,30 @@
 
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+
+	.presets-wrapper {
+		background-color: var(--lighter-background);
+		padding: 10px;
+		border-radius: 4px;
+	}
+
+	.title {
+		font-weight: 900;
+		margin-bottom: 10px;
+	}
+
+	.preset-list {
+		padding-left: 20px;
+		column-count: 2;
+	}
+
+	.preset-item {
+		margin-bottom: 10px;
+	}
+
+	.preset-link {
+		cursor: pointer;
+	}
 
 </style>

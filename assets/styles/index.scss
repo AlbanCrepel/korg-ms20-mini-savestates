@@ -14,9 +14,12 @@
 }
 
 html.dark {
-  --layout-background: black;
-  --border-color: white;
+  --layout-background: #0e0e0e;
   --text-color: white;
+  --lighter-background: #1a191d;
+  --border-color: #2c2b31;
+  --highlight-color: red;
+  --secondary-color: #3D1AA9;
 }
 
 html {
@@ -43,4 +46,8 @@ html {
 
 .no-wrap {
   white-space: nowrap;
+}
+
+.monospace {
+  font-family: 'jetbrains', monospace;
 }

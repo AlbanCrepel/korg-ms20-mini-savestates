@@ -6,9 +6,11 @@
 			<patch-nodes/>
 		</div>
 
-		<actions/>
+		<div class="presets">
+			<preset-list/>
 
-		<preset-list/>
+			<controller-form />
+		</div>
 	</main>
 </template>
 
@@ -25,3 +27,16 @@
 	})
 
 </script>
+
+<style scoped>
+
+	.presets {
+		display: flex;
+		margin: 10px;
+		justify-content: space-between;
+		gap: 20px;
+		flex-wrap: wrap;
+		margin-top: 40px;
+	}
+
+</style>

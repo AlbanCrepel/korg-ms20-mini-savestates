@@ -92,12 +92,12 @@
 	}
 
 	.virtual-knob-container {
-		--knob-border-color: #2c2b31;
+		--knob-border-color: var(--border-color);
 		--knob-label-color: white;
 		width: calc(v-bind(knobSize) * 1px);
 		height: calc(v-bind(knobSize) * 1px);
 		border: solid 1px var(--knob-border-color);
-		background-color: #1a191d;
+		background-color: var(--lighter-background);
 		border-radius: 50%;
 		position: relative;
 		box-sizing: border-box;
@@ -130,7 +130,7 @@
 		--size: 8px;
 		width: var(--size);
 		height: var(--size);
-		background-color: red;
+		background-color: var(--highlight-color);
 		border-radius: 50%;
 		position: absolute;
 		left: calc(50% - var(--size) / 2);

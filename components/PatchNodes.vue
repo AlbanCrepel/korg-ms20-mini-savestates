@@ -46,7 +46,9 @@
 			}
 		},
 		mounted() {
-			window.addEventListener('load', () => {
+			window.addEventListener('load', async () => {
+				await this.$nextTick()
+
 				const patchElements = [...document.querySelectorAll(".patch")]
 
 				for (const patchElement of patchElements) {
