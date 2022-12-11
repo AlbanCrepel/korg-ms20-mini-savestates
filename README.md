@@ -1,6 +1,6 @@
 # Korg MS20-mini savestates
 
-> Create and save korg ms20-mini patches
+> Create and save korg ms20-mini patches :sparkles: 
 
 ![](./docs/screenshot.png)
 
@@ -22,4 +22,8 @@ yarn dev # Run the project inside your browser
 yarn build # Build static files to serve for production
 ```
 
-When saving patches, place the json file in the `content` folder to get listed in the user interface.
+:floppy_disk: When saving patches, place the json file in the `content` folder to get listed in the user interface.
+
+---
+
+:heart: You can contribute to my open-source projects with github donations or via [Ko-fi](https://ko-fi.com/alban_crepel#).
