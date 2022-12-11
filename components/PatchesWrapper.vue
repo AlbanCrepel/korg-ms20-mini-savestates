@@ -2,8 +2,10 @@
 	<div class="patches-wrapper">
 		<patch label="total" id="total" :row-start="2" :column-start="1" :row-end="3" :column-end="2"/>
 		<patch label="Freq" id="freq" :row-start="2" :column-start="2" :row-end="3" :column-end="3" :left="20"/>
-		<patch label="Ext signal in" id="ext_signal_in" :row-start="2" :column-start="3" :row-end="3" :column-end="4" :left="30"/>
-		<patch label="Cutoff freq" id="cutoff_freq_1" :row-start="2" :column-start="5" :row-end="3" :column-end="6" :left="-10" />
+		<patch label="Ext signal in" id="ext_signal_in" :row-start="2" :column-start="3" :row-end="3" :column-end="4"
+		       :left="30"/>
+		<patch label="Cutoff freq" id="cutoff_freq_1" :row-start="2" :column-start="5" :row-end="3" :column-end="6"
+		       :left="-10"/>
 		<patch label="Cutoff freq" id="cutoff_freq_2" :row-start="2" :column-start="6" :row-end="3" :column-end="7"/>
 		<patch label="Initial gain" id="initial_gain" :row-start="2" :column-start="7" :row-end="3" :column-end="8"/>
 
@@ -11,7 +13,8 @@
 		<patch label="Out" id="out_2" :row-start="3" :column-start="3" :row-end="4" :column-end="4"/>
 		<patch label="Out" id="out_3" :row-start="3" :column-start="4" :row-end="4" :column-end="5"/>
 		<patch label="Rev out" id="rev_out_1" :row-start="3" :column-start="7" :row-end="4" :column-end="8" :left="40"/>
-		<patch label="VCO 2" id="vco_2" :row-start="3" :column-start="8" :row-end="4" :column-end="9" :top="30" :left="20"/>
+		<patch label="VCO 2" id="vco_2" :row-start="3" :column-start="8" :row-end="4" :column-end="9" :top="30"
+		       :left="20"/>
 		<patch label="VCO 1+2" id="vco1_2" :row-start="3" :column-start="9" :row-end="4" :column-end="10"/>
 		<patch label="Kbd" id="kbd" :row-start="3" :column-start="10" :row-end="4" :column-end="11"/>
 
@@ -32,7 +35,8 @@
 		<patch label="Button" id="button" :row-start="5" :column-start="10" :row-end="6" :column-end="11"/>
 
 
-		<knob-wrapper :knob="$store.currentState.volume" :style="{ gridArea: '1 / 8 / 3 / 10', margin: 'auto', marginTop: '23px' }" :reversed="true"/>
+		<knob-wrapper :knob="$store.currentState.volume"
+		              :style="{ gridArea: '1 / 8 / 3 / 10', margin: 'auto', marginTop: '23px' }" :reversed="true"/>
 		<patch label="Signal out" id="signal_out" :row-start="1" :column-start="10" :row-end="2" :column-end="11"/>
 		<patch label="Phones" id="phones" :row-start="2" :column-start="10" :row-end="3" :column-end="11"/>
 	</div>

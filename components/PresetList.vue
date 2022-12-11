@@ -6,21 +6,21 @@
 
 <script>
 
-	import {Controller} from "../models/Controller";
+	import {Controller} from "../models/Controller"
 
 	export default {
 		name: "PresetList",
-		data(){
+		data() {
 			return {
 				presets: []
 			}
 		},
 		methods: {
-			loadPreset(index){
+			loadPreset(index) {
 				this.$store.currentState = new Controller(this.presets[index])
 			}
 		},
-		async mounted(){
+		async mounted() {
 			this.presets = await queryContent().find()
 		}
 	}

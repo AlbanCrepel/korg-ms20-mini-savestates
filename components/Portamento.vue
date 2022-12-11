@@ -1,6 +1,6 @@
 <template>
 	<controller-group title="Portamento">
-		<knob-wrapper :knob="$store.currentState.portamento" />
+		<knob-wrapper :knob="$store.currentState.portamento"/>
 	</controller-group>
 </template>
 
@@ -9,7 +9,3 @@
 		name: "Portamento"
 	}
 </script>
-
-<style scoped>
-
-</style>

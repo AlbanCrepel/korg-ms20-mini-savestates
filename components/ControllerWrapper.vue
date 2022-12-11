@@ -1,30 +1,30 @@
 <template>
 	<div class="controller-wrapper">
-		<vco1 class="div1"></vco1>
-		<vco2 class="div2"></vco2>
-		<vco-mixer class="div3"></vco-mixer>
-		<voltage-controlled-highpass-filter class="div4"></voltage-controlled-highpass-filter>
-		<voltage-controlled-lowpass-filter class="div5"></voltage-controlled-lowpass-filter>
-		<div class="div6"></div>
-		<envelope-generator2 class="div7"></envelope-generator2>
-		<patches-wrapper class="div8"></patches-wrapper>
-		<portamento class="div9" :fullHeight="false"></portamento>
-		<master-tune class="div10" :fullHeight="false"></master-tune>
-		<freq-modulation class="div11" :fullHeight="false"></freq-modulation>
-		<cutoff-frequency-modulation1 class="div12" :fullHeight="false"></cutoff-frequency-modulation1>
-		<cutoff-frequency-modulation2 class="div13" :fullHeight="false"></cutoff-frequency-modulation2>
-		<modulation-generator class="div14" :fullHeight="false"></modulation-generator>
-		<envelope-generator-1 class="div15" :fullHeight="false"></envelope-generator-1>
-		<external-signal-processor class="div16"></external-signal-processor>
+		<vco1 class="div1"/>
+		<vco2 class="div2"/>
+		<vco-mixer class="div3" :fullHeight="false"/>
+		<voltage-controlled-highpass-filter class="div4"/>
+		<voltage-controlled-lowpass-filter class="div5"/>
+		<div class="div6"/>
+		<envelope-generator2 class="div7"/>
+		<patches-wrapper class="div8"/>
+		<portamento class="div9" :fullHeight="false"/>
+		<master-tune class="div10" :fullHeight="false"/>
+		<freq-modulation class="div11" :fullHeight="false"/>
+		<cutoff-frequency-modulation1 class="div12" :fullHeight="false"/>
+		<cutoff-frequency-modulation2 class="div13" :fullHeight="false"/>
+		<modulation-generator class="div14" :fullHeight="false"/>
+		<envelope-generator-1 class="div15" :fullHeight="false"/>
+		<external-signal-processor class="div16"/>
 	</div>
 </template>
 
 <script>
 
-
 	export default {
 		name: "ControllerWrapper",
 	}
+
 </script>
 
 <style scoped lang="scss">

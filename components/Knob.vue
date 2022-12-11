@@ -3,7 +3,8 @@
 		<div class="virtual-knob-container">
 			<div class="value">{{ modelValue }}</div>
 			<div class="virtual-thumb"></div>
-			<input class="knob-slider" type="range" :step="step" :min="min" :max="max" :value="modelValue" @input="emitValue" />
+			<input class="knob-slider" type="range" :step="step" :min="min" :max="max" :value="modelValue"
+			       @input="emitValue"/>
 		</div>
 		<span v-for="(item, index) in range"
 		      class="label"
@@ -50,22 +51,22 @@
 			}
 		},
 		computed: {
-			range(){
+			range() {
 				return Array(this.max - this.min + 1).fill().map((_, idx) => this.min + idx)
 			},
-			stepsCount(){
+			stepsCount() {
 				return this.max - this.min
 			},
-			virtualThumbRotation(){
+			virtualThumbRotation() {
 				const normalizedModelValue = this.modelValue + this.min * -1 // We want our value to start at 0
 				return `${this.getCircleDegreeByValue(normalizedModelValue)}deg`
 			}
 		},
 		methods: {
-			getCircleDegreeByValue(value){
-				return ((360 - this.circleDegreeOffset * 2)  / this.stepsCount) * value + this.circleDegreeOffset
+			getCircleDegreeByValue(value) {
+				return ((360 - this.circleDegreeOffset * 2) / this.stepsCount) * value + this.circleDegreeOffset
 			},
-			computeLabelPosition(labelIndex){
+			computeLabelPosition(labelIndex) {
 				const radius = this.knobSize / 2
 
 				return {
@@ -73,7 +74,7 @@
 					y: roundNumber((radius + this.labelsPadding / 2) * Math.cos(Math.PI * 2 * this.getCircleDegreeByValue(labelIndex) / 360))
 				}
 			},
-			emitValue(e){
+			emitValue(e) {
 				this.$emit("update:modelValue", parseFloat(e.target.value))
 			}
 		}
@@ -140,38 +141,32 @@
 	}
 
 	.knob-slider {
+		--offset: 40px;
 		appearance: none;
-		background: #d3d3d3; /* Grey background */
-		outline: none; /* Remove outline */
-		opacity: 0; /* Set transparency (for mouse-over effects on hover) */
+		outline: none;
+		opacity: 0;
 		cursor: pointer;
-		/*transition: opacity .2s;*/
-		width: calc(100% + 40px);
-		height: calc(100% + 40px);
+		width: calc(100% + var(--offset));
+		height: calc(100% + var(--offset));
 		transform-origin: center center;
 		transform: rotateZ(-90deg) translate(25%, -50%);
 		position: absolute;
 	}
 
-	/* Mouse-over effects */
-	.knob-slider:hover {
-		opacity: 0; /* Fully shown on mouse-over */
+	.knob-slider-thumb {
+		--size: 25px;
+		width: var(--size);
+		height: var(--size);
+		background: red;
+		cursor: pointer;
 	}
 
-	/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
 	.knob-slider::-webkit-slider-thumb {
-		/*appearance: none;*/
-		width: 25px; /* Set a specific slider handle width */
-		height: 25px; /* Slider handle height */
-		background: red;
-		cursor: pointer; /* Cursor on hover */
+		@extend .knob-slider-thumb;
 	}
 
 	.knob-slider::-moz-range-thumb {
-		width: 25px; /* Set a specific slider handle width */
-		height: 25px; /* Slider handle height */
-		background: red;
-		cursor: pointer; /* Cursor on hover */
+		@extend .knob-slider-thumb;
 	}
 
 </style>

@@ -1,4 +1,4 @@
-import {useControllerStore} from "../stores/controller";
+import {useControllerStore} from "../stores/controller"
 
 export default defineNuxtPlugin(() => {
     return {

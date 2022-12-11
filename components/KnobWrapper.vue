@@ -12,7 +12,7 @@
 </template>
 
 <script>
-	import {Knob} from "../models/Knob";
+	import {Knob} from "../models/Knob"
 
 	export default {
 		name: "KnobWrapper",

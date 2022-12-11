@@ -3,12 +3,12 @@
 		<div class="container">
 			<controller-wrapper/>
 
-			<patch-nodes />
+			<patch-nodes/>
 		</div>
 
-		<actions />
+		<actions/>
 
-		<preset-list />
+		<preset-list/>
 	</main>
 </template>
 

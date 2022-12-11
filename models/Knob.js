@@ -5,7 +5,7 @@ export const Knob = class Knob {
     static DISCRETE_STEP = 1
     static CONTINUOUS_STEP = 0.1
 
-    constructor(label, id, value, min, max, step, circleDegreeOffset, size){
+    constructor(label, id, value, min, max, step, circleDegreeOffset, size) {
         this.label = label
         this.id = id
         this.value = value

@@ -15,29 +15,29 @@
 
 <script>
 
-	import { VueFlow } from '@vue-flow/core'
-	import {PatchEdge} from "../models/PatchEdge";
+	import {VueFlow} from '@vue-flow/core'
+	import {PatchEdge} from "../models/PatchEdge"
 
 	export default {
 		name: "PatchNodes",
-		components: { VueFlow },
-		data(){
+		components: {VueFlow},
+		data() {
 			return {
 				nodes: [],
 				loaded: false
 			}
 		},
 		methods: {
-			onConnect(connection){
+			onConnect(connection) {
 				this.$store.currentState.patchEdges.push(new PatchEdge(
-					`${ connection.source }_TO_${ connection.target }`,
+					`${connection.source}_TO_${connection.target}`,
 					connection.target,
 					connection.source
 				))
 			},
-			onEdgesChange(changes){
-				for(const change of changes){
-					if(change.type === "remove"){
+			onEdgesChange(changes) {
+				for (const change of changes) {
+					if (change.type === "remove") {
 						const edgeIndexToRemove = this.$store.currentState.patchEdges.findIndex(edge => edge.id === change.id)
 
 						this.$store.currentState.patchEdges.splice(edgeIndexToRemove, 1)
@@ -45,11 +45,11 @@
 				}
 			}
 		},
-		mounted(){
+		mounted() {
 			window.addEventListener('load', () => {
 				const patchElements = [...document.querySelectorAll(".patch")]
 
-				for(const patchElement of patchElements){
+				for (const patchElement of patchElements) {
 					const elementData = patchElement.getBoundingClientRect()
 					this.nodes.push({
 						id: patchElement.id,
@@ -70,8 +70,8 @@
 
 	.patch-nodes {
 		position: absolute;
-		top:0;
-		left:0;
+		top: 0;
+		left: 0;
 		right: 0;
 		bottom: 0;
 	}
@@ -88,7 +88,7 @@
 	}
 
 	.vue-flow__handle {
-		--size:40px;
+		--size: 40px;
 		width: var(--size);
 		height: var(--size);
 	}

@@ -1,5 +1,5 @@
-import { defineStore } from 'pinia'
-import {Controller} from "../models/Controller";
+import {defineStore} from 'pinia'
+import {Controller} from "../models/Controller"
 
 export const useControllerStore = defineStore('controller', {
     state: () => {
@@ -7,7 +7,5 @@ export const useControllerStore = defineStore('controller', {
             currentState: new Controller()
         }
     },
-    actions: {
-
-    }
+    actions: {}
 })

@@ -8,7 +8,7 @@
 	export default {
 		name: "Actions",
 		methods: {
-			saveCurrentState(){
+			saveCurrentState() {
 				this.$store.currentState.save()
 			}
 		}

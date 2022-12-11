@@ -1,8 +1,8 @@
 <template>
 	<controller-group title="Modulation generator">
-		<knob-wrapper :knob="$store.currentState.modulation_generator_wave" />
+		<knob-wrapper :knob="$store.currentState.modulation_generator_wave"/>
 
-		<knob-wrapper :knob="$store.currentState.modulation_generator_freq" />
+		<knob-wrapper :knob="$store.currentState.modulation_generator_freq"/>
 	</controller-group>
 </template>
 
@@ -11,7 +11,3 @@
 		name: "ModulationGenerator"
 	}
 </script>
-
-<style scoped>
-
-</style>

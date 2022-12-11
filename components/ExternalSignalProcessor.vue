@@ -8,19 +8,20 @@
 				<patch label="Out" id="out_8" :row-start="1" :column-start="7" :row-end="2" :column-end="8"/>
 				<patch label="CV out" id="cv_out" :row-start="1" :column-start="10" :row-end="2" :column-end="11"/>
 				<patch label="Env out" id="env_out" :row-start="1" :column-start="14" :row-end="2" :column-end="15"/>
-				<patch label="Trig out" id="trig_out_2" :row-start="1" :column-start="16" :row-end="2" :column-end="17"/>
+				<patch label="Trig out" id="trig_out_2" :row-start="1" :column-start="16" :row-end="2"
+				       :column-end="17"/>
 			</div>
 
 			<div class="flex-row">
-				<knob-wrapper :knob="$store.currentState.external_signal_processor_signal" />
+				<knob-wrapper :knob="$store.currentState.external_signal_processor_signal"/>
 
-				<knob-wrapper :knob="$store.currentState.external_signal_processor_low_cut_freq" />
+				<knob-wrapper :knob="$store.currentState.external_signal_processor_low_cut_freq"/>
 
-				<knob-wrapper :knob="$store.currentState.external_signal_processor_high_cut_freq" />
+				<knob-wrapper :knob="$store.currentState.external_signal_processor_high_cut_freq"/>
 
-				<knob-wrapper :knob="$store.currentState.external_signal_processor_cv_adjust" />
+				<knob-wrapper :knob="$store.currentState.external_signal_processor_cv_adjust"/>
 
-				<knob-wrapper :knob="$store.currentState.external_signal_processor_threshold" />
+				<knob-wrapper :knob="$store.currentState.external_signal_processor_threshold"/>
 			</div>
 		</div>
 	</controller-group>
@@ -53,7 +54,6 @@
 
 	.flex-row {
 		display: flex;
-		/*justify-content: space-between;*/
 	}
 
 </style>

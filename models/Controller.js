@@ -1,7 +1,7 @@
-import {Knob} from "./Knob";
+import {Knob} from "./Knob"
 
 export const Controller = class Controller {
-    constructor(options = {}){
+    constructor(options = {}) {
         this.vco1_wave = new Knob("wave form", "vco1_wave", options.vco1_wave ?? 1, 0, 3, Knob.DISCRETE_STEP, 100, Knob.BIG)
         this.vco1_pw = new Knob("pw", "vco1_pw", options.vco1_pw ?? 0, 0, 10, Knob.CONTINUOUS_STEP, 60, Knob.SMALL)
         this.vco1_scale = new Knob("scale", "vco1_scale", options.vco1_scale ?? 1, 0, 3, Knob.DISCRETE_STEP, 100, Knob.BIG)
@@ -58,21 +58,21 @@ export const Controller = class Controller {
     save = () => {
         const dataToExport = {}
 
-        for(const[key, value] of Object.entries(this)){
-            if(Array.isArray(this[key])){
+        for (const [key, value] of Object.entries(this)) {
+            if (Array.isArray(this[key])) {
                 dataToExport[key] = value
-            } else if(typeof this[key] === "object") {
+            } else if (typeof this[key] === "object") {
                 dataToExport[key] = value.value
             }
         }
 
-        const dataStr = `data:text/json;charset=utf-8,${ encodeURIComponent(JSON.stringify(dataToExport)) }`;
-        const downloadAnchorNode = document.createElement('a');
-        downloadAnchorNode.setAttribute("href", dataStr);
+        const dataStr = `data:text/json;charset=utf-8,${encodeURIComponent(JSON.stringify(dataToExport))}`
+        const downloadAnchorNode = document.createElement('a')
+        downloadAnchorNode.setAttribute("href", dataStr)
         // @TODO change file name
-        downloadAnchorNode.setAttribute("download", `korg-ms20-mini-preset.json`);
-        document.body.appendChild(downloadAnchorNode); // required for firefox
-        downloadAnchorNode.click();
-        downloadAnchorNode.remove();
+        downloadAnchorNode.setAttribute("download", `korg-ms20-mini-preset.json`)
+        document.body.appendChild(downloadAnchorNode) // required for firefox
+        downloadAnchorNode.click()
+        downloadAnchorNode.remove()
     }
 }
