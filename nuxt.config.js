@@ -6,4 +6,10 @@ export default defineNuxtConfig({
         '@pinia/nuxt',
         '@nuxt/content'
     ],
+
+    content: {
+        experimental: {
+            clientDB: true
+        }
+    }
 })
